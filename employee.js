@@ -5,9 +5,13 @@ class Employee {
 		this.title = title;
 		this.manager = manager;
 
-		if (manager) {
+		if (manager && typeof manager.addEmployee === "function") {
 			manager.addEmployee(this);
 		}
+	}
+
+	calculateBonus(multiplier) {
+		return this.salary * multiplier;
 	}
 }
 
